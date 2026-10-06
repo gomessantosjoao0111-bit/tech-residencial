@@ -1,22 +1,232 @@
-<!doctype html>
-<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Tech Residencial</title>
-<style>
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,sans-serif;background:#5b21b6;color:white;line-height:1.6}nav{position:sticky;top:0;z-index:9;background:#240046ee;padding:18px 7%;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}nav a{color:white;text-decoration:none;margin:0 8px;font-weight:bold}.hero{min-height:85vh;padding:70px 8%;display:flex;align-items:center;background:linear-gradient(135deg,#7c3aed,#3b0764)}h1{font-size:clamp(3.5rem,10vw,7rem);line-height:.9;margin:15px 0}.hero p{font-size:1.25rem;max-width:700px}.btn{display:inline-block;margin-top:20px;background:white;color:#4c1d95;padding:12px 20px;border-radius:12px;text-decoration:none;font-weight:bold}section{padding:65px 8%}.title{font-size:2.4rem}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}.card,.highlight{background:#240046cc;border:1px solid #ffffff33;border-radius:18px;padding:24px}.card h3{color:#e9d5ff}.step{display:flex;gap:15px;margin:15px 0;padding:18px;background:#ffffff14;border-radius:15px}.num{background:white;color:#4c1d95;border-radius:50%;min-width:36px;height:36px;text-align:center;line-height:36px;font-weight:bold}footer{background:#17002d;text-align:center;padding:30px}@media(max-width:650px){nav{justify-content:center}.hero{min-height:75vh}section{padding:50px 6%}}
-</style></head><body>
-<nav><strong>TECH RESIDENCIAL</strong><div><a href="#sobre">Sobre</a><a href="#solucoes">Soluções</a><a href="#marketing">Marketing</a><a href="#equipe">Equipe</a></div></nav>
-<header class="hero"><div><small>AUTOMAÇÃO • TECNOLOGIA • CONFORTO</small><h1>Tech<br>Residencial</h1><p>Tecnologia pensada para transformar sua casa em um ambiente mais prático, confortável e inteligente.</p><a class="btn" href="#sobre">Conheça o projeto ↓</a></div></header>
-<section id="sobre"><h2 class="title">Por que automatizar?</h2><p>A Tech Residencial tem uma ideia simples: usar a tecnologia para facilitar a vida dentro de casa.</p><div class="grid">
-<div class="card"><h3>⚡ Praticidade</h3><p>Controle recursos da casa de forma simples e inteligente.</p></div><div class="card"><h3>🏠 Conforto</h3><p>Ambientes adaptados às necessidades de cada momento.</p></div><div class="card"><h3>📱 Controle</h3><p>A tecnologia coloca o controle dos ambientes na palma da mão.</p></div><div class="card"><h3>💡 Inovação</h3><p>Ideias modernas para tornar a residência mais inteligente.</p></div></div></section>
-<section id="solucoes"><h2 class="title">Nossas ideias</h2><div class="grid">
-<div class="card"><h3>💡 Iluminação inteligente</h3><p>Controle e ajuste da iluminação dos ambientes.</p></div><div class="card"><h3>🪟 Cortina automática</h3><p>Mais praticidade para abrir e fechar cortinas.</p></div><div class="card"><h3>🌡️ Sensor de temperatura</h3><p>Monitoramento do ambiente para mais conforto.</p></div><div class="card"><h3>🔌 Tomada de uso geral</h3><p>Integração de pontos de energia ao projeto.</p></div><div class="card"><h3>🔥 Piso aquecido</h3><p>Uma proposta de conforto residencial.</p></div><div class="card"><h3>📺 Painel retrátil</h3><p>Um painel que aparece quando necessário.</p></div><div class="card"><h3>✨ LED nas poltronas</h3><p>Iluminação integrada para uma experiência diferente.</p></div></div>
-<div class="highlight"><h2>🎬 Modo Cinema — conceito futuro</h2><p>Uma proposta de expansão: combinar iluminação, cortinas, temperatura, painel retrátil e LEDs das poltronas em um único ambiente automatizado.</p></div></section>
-<section><h2 class="title">Nossa trajetória</h2>
-<div class="step"><b class="num">1</b><div><b>Ideia</b><br>Percebemos como a automação pode facilitar tarefas do dia a dia.</div></div>
-<div class="step"><b class="num">2</b><div><b>Maquete</b><br>Representamos sala, banheiro, cozinha e dois quartos.</div></div>
-<div class="step"><b class="num">3</b><div><b>Demonstração</b><br>Luzes dos ambientes controladas pelo celular usando Bluetooth.</div></div>
-<div class="step"><b class="num">4</b><div><b>Próximo passo</b><br>Expandir a automação e explorar novas possibilidades.</div></div></section>
-<section id="marketing"><h2 class="title">Marketing</h2><div class="grid"><div class="card"><h3>🎯 Público-alvo</h3><p>Pessoas interessadas em tecnologia, conforto e inovação.</p></div><div class="card"><h3>📱 Divulgação</h3><p>Redes sociais, vídeos, demonstrações e apresentações.</p></div><div class="card"><h3>🚀 Diferencial</h3><p>Mostrar na prática como a automação facilita o cotidiano.</p></div></div></section>
-<section id="equipe"><h2 class="title">Nossa equipe</h2><div class="grid"><div class="card"><h3>João Victor Gomes</h3><p>Líder de Marketing</p></div><div class="card"><h3>Pablo</h3><p>Vice-líder</p></div></div></section>
-<footer>© 2026 Tech Residencial • Projeto escolar de Programação e Robótica</footer>
-</body></html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Residencial — Automação e Soluções Tecnológicas</title>
+    <style>
+        :root {
+            --primary-color: #0066ff;
+            --secondary-color: #00d2ff;
+            --bg-dark: #0a0f1d;
+            --card-bg: #161f33;
+            --text-light: #f0f4f9;
+            --text-gray: #a0aec0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        header {
+            background: rgba(10, 15, 29, 0.9);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--secondary-color);
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin-left: 20px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        .hero {
+            padding: 160px 5% 80px;
+            text-align: center;
+            background: linear-gradient(180deg, rgba(0,102,255,0.15) 0%, rgba(10,15,29,1) 100%);
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            color: #fff;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: transform 0.2s;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin: 60px 0 30px;
+            color: var(--secondary-color);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 0 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 0 5%;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            background: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            color: #fff;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-gray);
+            margin-top: 60px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            nav { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">Tech Residencial</div>
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <section id="inicio" class="hero">
+        <h1>Transformando sua casa com inteligência e tecnologia</h1>
+        <p>Soluções modernas em automação residencial, segurança inteligente e conectividade de alta performance.</p>
+        <a href="#contato" class="btn">Solicitar Orçamento</a>
+    </section>
+
+    <h2 id="servicos" class="section-title">Nossos Serviços</h2>
+    <div class="services-grid">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=600&q=80" alt="Iluminação Inteligente">
+            <h3>Iluminação Inteligente</h3>
+            <p>Controle lâmpadas, fitas LED e cenas luminosas pelo celular ou comandos de voz.</p>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=600&q=80" alt="Segurança Conectada">
+            <h3>Segurança Inteligente</h3>
+            <p>Câmeras Wi-Fi, fechaduras digitais e alarmes integrados com monitoramento remoto.</p>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80" alt="Redes Wi-Fi Mesh">
+            <h3>Redes Mesh & Conectividade</h3>
+            <p>Cobertura Wi-Fi total para sua casa, garantindo velocidade máxima em todos os cômodos.</p>
+        </div>
+    </div>
+
+    <h2 id="contato" class="section-title">Fale Conosco</h2>
+    <div class="contact-form">
+        <form onsubmit="event.preventDefault(); alert('Mensagem enviada com sucesso!');">
+            <div class="form-group">
+                <input type="text" placeholder="Seu Nome" required>
+            </div>
+            <div class="form-group">
+                <input type="email" placeholder="Seu E-mail" required>
+            </div>
+            <div class="form-group">
+                <textarea rows="4" placeholder="Como podemos te ajudar?" required></textarea>
+            </div>
+            <button type="submit" class="btn" style="width: 100%; border: none; cursor: pointer;">Enviar Mensagem</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; Tech Residencial — Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+  </html>
+  
