@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>techresidencial — Automação Inteligente</title>
+    <title>techresidencial — Automação e Soluções Inteligentes</title>
     <style>
         :root {
             --bg-dark: #0b0712;
             --purple-dark: #1b102b;
-            --purple-card: #27163e;
+            --purple-card: #221437;
             --purple-primary: #8a2be2;
             --purple-light: #9d4edd;
+            --purple-glow: rgba(157, 78, 221, 0.4);
             --text-light: #ffffff;
             --text-gray: #d1c4e9;
         }
@@ -19,7 +20,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
             scroll-behavior: smooth;
         }
 
@@ -27,119 +28,125 @@
             background-color: var(--bg-dark);
             color: var(--text-light);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
+        /* Cabecalho */
         header {
             background: rgba(11, 7, 18, 0.95);
             position: fixed;
             width: 100%;
             top: 0;
             left: 0;
-            padding: 12px 5%;
+            padding: 15px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             backdrop-filter: blur(10px);
             z-index: 1000;
-            border-bottom: 1px solid var(--purple-primary);
+            border-bottom: 1px solid rgba(157, 78, 221, 0.3);
         }
 
         .logo-container {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
         }
 
         .logo-img {
-            height: 38px;
+            height: 42px;
             width: auto;
             object-fit: contain;
         }
 
         .logo-text {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: bold;
             letter-spacing: -0.5px;
         }
 
-        .logo-text .tech {
-            color: #ffffff;
-        }
+        .logo-text .tech { color: #ffffff; }
+        .logo-text .residencial { color: var(--purple-light); }
 
-        .logo-text .residencial {
-            color: var(--purple-light);
+        nav {
+            display: flex;
+            gap: 20px;
         }
 
         nav a {
             color: var(--text-light);
             text-decoration: none;
-            margin-left: 20px;
             font-weight: 500;
-            transition: 0.3s;
+            transition: color 0.3s;
+            font-size: 0.95rem;
         }
 
-        nav a:hover {
-            color: var(--purple-light);
-        }
+        nav a:hover { color: var(--purple-light); }
 
+        /* Hero / Inicio */
         .hero {
-            padding: 150px 5% 70px;
+            padding: 180px 5% 100px;
             text-align: center;
-            background: radial-gradient(circle at top, rgba(138, 43, 226, 0.25) 0%, rgba(11, 7, 18, 1) 70%);
+            background: radial-gradient(circle at top, rgba(138, 43, 226, 0.3) 0%, rgba(11, 7, 18, 1) 75%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .hero-logo {
-            max-width: 250px;
+            max-width: 240px;
             height: auto;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            filter: drop-shadow(0 0 15px var(--purple-glow));
+            animation: float 4s ease-in-out infinite;
         }
 
         .hero h1 {
-            font-size: 2.5rem;
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
             margin-bottom: 20px;
-            color: var(--text-light);
+            max-width: 900px;
+            line-height: 1.2;
         }
 
-        .hero h1 span {
-            color: var(--purple-light);
-        }
+        .hero h1 span { color: var(--purple-light); }
 
         .hero p {
-            font-size: 1.15rem;
+            font-size: clamp(1.05rem, 2vw, 1.25rem);
             color: var(--text-gray);
-            max-width: 750px;
-            margin: 0 auto 30px;
+            max-width: 780px;
+            margin: 0 auto 35px;
         }
 
         .btn {
             display: inline-block;
-            padding: 12px 32px;
+            padding: 14px 36px;
             background: linear-gradient(135deg, var(--purple-primary), var(--purple-light));
             color: #fff;
             text-decoration: none;
-            border-radius: 25px;
+            border-radius: 30px;
             font-weight: bold;
-            box-shadow: 0 4px 15px rgba(138, 43, 226, 0.4);
-            transition: transform 0.2s, box-shadow 0.2s;
-            cursor: pointer;
+            box-shadow: 0 4px 20px var(--purple-glow);
+            transition: all 0.3s ease;
             border: none;
+            cursor: pointer;
         }
 
         .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(157, 78, 221, 0.6);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(157, 78, 221, 0.7);
         }
 
+        /* Estrutura das Secoes */
         .section {
-            padding: 70px 5%;
+            padding: 80px 5%;
             max-width: 1200px;
             margin: 0 auto;
         }
 
         .section-title {
             text-align: center;
-            font-size: 2.2rem;
-            margin-bottom: 20px;
+            font-size: clamp(1.8rem, 3.5vw, 2.4rem);
+            margin-bottom: 15px;
             color: var(--purple-light);
         }
 
@@ -147,140 +154,109 @@
             text-align: center;
             color: var(--text-gray);
             max-width: 700px;
-            margin: -10px auto 40px;
-        }
-
-        .about-box {
-            background-color: var(--purple-card);
-            padding: 35px;
-            border-radius: 16px;
-            border: 1px solid rgba(157, 78, 221, 0.2);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-        }
-
-        .about-box p {
-            margin-bottom: 15px;
+            margin: 0 auto 50px;
             font-size: 1.05rem;
-            color: var(--text-gray);
         }
 
-        .projects-grid {
+        /* Cards Grid General */
+        .cards-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
         }
 
-        .project-card {
+        .card {
             background: var(--purple-card);
             border-radius: 16px;
-            padding: 25px;
+            padding: 30px 25px;
             border: 1px solid rgba(157, 78, 221, 0.2);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            transition: transform 0.3s;
+            transition: all 0.3s ease;
         }
 
-        .project-card:hover {
+        .card:hover {
             transform: translateY(-8px);
             border-color: var(--purple-light);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
         }
 
-        .project-card h3 {
+        .card-icon {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .card h3 {
             color: var(--text-light);
             margin-bottom: 12px;
-            font-size: 1.4rem;
+            font-size: 1.3rem;
         }
 
-        .project-card p {
+        .card p {
             color: var(--text-gray);
             font-size: 0.95rem;
-            margin-bottom: 20px;
         }
 
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.85);
-            backdrop-filter: blur(5px);
-            z-index: 2000;
+        /* Secao Arquitetura / Fluxo de Funcionamento */
+        .flow-container {
+            display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            gap: 20px;
+            margin-top: 30px;
         }
 
-        .modal-content {
-            background-color: var(--purple-dark);
-            border: 2px solid var(--purple-light);
+        .flow-step {
+            background: var(--purple-card);
+            border: 1px solid rgba(157, 78, 221, 0.3);
+            padding: 25px;
             border-radius: 16px;
-            max-width: 650px;
-            width: 100%;
-            padding: 30px;
-            position: relative;
-            box-shadow: 0 0 30px rgba(157, 78, 221, 0.4);
-        }
-
-        .close-btn {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 1.8rem;
-            color: var(--text-gray);
-            cursor: pointer;
-        }
-
-        .close-btn:hover {
-            color: var(--text-light);
-        }
-
-        .modal-title {
-            color: var(--purple-light);
-            margin-bottom: 15px;
-        }
-
-        .modal-body {
-            color: var(--text-gray);
-            font-size: 1rem;
-        }
-
-        .modal-body ul {
-            margin-left: 20px;
-            margin-top: 10px;
-        }
-
-        .modal-body li {
-            margin-bottom: 8px;
-        }
-
-        footer {
             text-align: center;
-            padding: 30px 20px;
+            flex: 1;
+            min-width: 220px;
+        }
+
+        .flow-arrow {
+            font-size: 1.8rem;
+            color: var(--purple-light);
+        }
+
+        /* Badge Conceito */
+        .badge-concept {
+            display: inline-block;
+            background: rgba(157, 78, 221, 0.2);
+            color: var(--purple-light);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 12px;
+            border: 1px solid var(--purple-light);
+        }
+
+        /* Rodape e Equipe */
+        footer {
             background-color: var(--purple-dark);
             border-top: 1px solid rgba(157, 78, 221, 0.2);
-            color: var(--text-gray);
-            font-size: 0.85rem;
+            padding: 40px 5% 30px;
+            text-align: center;
         }
 
-        .team-footer {
-            margin-top: 20px;
-            padding-top: 15px;
+        .team-box {
+            margin-top: 25px;
+            padding-top: 25px;
             border-top: 1px dashed rgba(157, 78, 221, 0.2);
-            color: var(--text-gray);
-            font-size: 0.9rem;
         }
 
-        .team-footer strong {
+        .team-box h4 {
             color: var(--purple-light);
-            display: block;
-            margin-bottom: 8px;
-            font-size: 1rem;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
         }
 
-        .team-footer ul {
+        .team-list {
             list-style: none;
             display: flex;
             justify-content: center;
@@ -288,110 +264,202 @@
             flex-wrap: wrap;
         }
 
-        .team-footer li {
+        .team-list li {
             background: var(--purple-card);
-            padding: 4px 12px;
-            border-radius: 12px;
-            border: 1px solid rgba(157, 78, 221, 0.2);
+            padding: 8px 18px;
+            border-radius: 20px;
+            border: 1px solid rgba(157, 78, 221, 0.3);
+            font-size: 0.95rem;
+            font-weight: 500;
         }
 
+        /* Animacao */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Adaptabilidade Mobile / TV */
         @media (max-width: 768px) {
             nav { display: none; }
-            .hero h1 { font-size: 2.1rem; }
-            .hero-logo { max-width: 180px; }
-            .team-footer ul { flex-direction: column; gap: 6px; align-items: center; }
+            .hero { padding-top: 130px; }
+            .flow-arrow { transform: rotate(90deg); margin: -10px 0; }
+        }
+
+        @media (min-width: 1600px) {
+            .section { max-width: 1400px; }
+            body { font-size: 18px; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Cabecalho -->
     <header>
         <div class="logo-container">
             <img src="logo.png" alt="techresidencial logo" class="logo-img" onerror="this.style.display='none'">
             <div class="logo-text"><span class="tech">tech</span><span class="residencial">residencial</span></div>
         </div>
         <nav>
-            <a href="#sobre">Sobre Nós</a>
-            <a href="#projetos">Projetos</a>
+            <a href="#vantagens">Vantagens</a>
+            <a href="#solucoes">Soluções</a>
+            <a href="#prototipo">Protótipo</a>
+            <a href="#projetos">Conceitos</a>
+            <a href="#funcionamento">Como Funciona</a>
         </nav>
     </header>
 
+    <!-- 🏠 Inicio Impactante -->
     <section class="hero">
         <img src="logo.png" alt="techresidencial" class="hero-logo" onerror="this.style.display='none'">
-        <h1>Inovação e Inteligência para a <span>Sua Casa</span></h1>
-        <p>A techresidencial está chegando para revolucionar o cenário da automação. Transformamos projetos e ideias em soluções profissionais para a sua casa.</p>
-        <a href="#projetos" class="btn">Conhecer Nossos Projetos</a>
+        <h1>Transformamos tecnologia em <span>praticidade</span> para o seu dia a dia</h1>
+        <p>A techresidencial integra soluções inteligentes de automação para elevar o conforto, a segurança e a eficiência da sua casa.</p>
+        <a href="#solucoes" class="btn">Explorar Soluções</a>
     </section>
 
-    <section id="sobre" class="section">
-        <h2 class="section-title">Sobre a Empresa</h2>
-        <p class="section-subtitle">Fundamentos e Propósito techresidencial</p>
-        <div class="about-box">
-            <p>A <strong>techresidencial</strong> nasceu de um trabalho escolar e hoje se adapta para se tornar uma empresa profissional de automação residencial.</p>
-            <p>Nossa missão é trazer praticidade e tecnologia para o seu lar. Desenvolvemos soluções para automatizar a sua casa desde tarefas simples, como acender luzes pelo celular, até projetos complexos para salas de entretenimento.</p>
-        </div>
-    </section>
-
-    <section id="projetos" class="section">
-        <h2 class="section-title">Nossos Projetos</h2>
-        <p class="section-subtitle">Clique em um projeto para ver mais informações</p>
+    <!-- 💡 Por que automatizar? -->
+    <section id="vantagens" class="section">
+        <h2 class="section-title">Por que automatizar?</h2>
+        <p class="section-subtitle">Descubra os pilares que tornam uma casa inteligente um investimento essencial</p>
         
-        <div class="projects-grid">
-            
-            <div class="project-card">
-                <div>
-                    <h3>🏠 Maquete Residencial Inteligente</h3>
-                    <p>Primeiro projeto desenvolvido: maquete funcional com controle de iluminação de múltiplos cômodos diretamente pelo celular.</p>
-                </div>
-                <button class="btn" onclick="openModal('modal1')">Ver Detalhes</button>
+        <div class="cards-grid">
+            <div class="card">
+                <span class="card-icon">⚡</span>
+                <h3>Praticidade</h3>
+                <p>Controle dispositivos, cenários e iluminação com apenas um toque no smartphone ou por comandos simples.</p>
             </div>
-
-            <div class="project-card">
-                <div>
-                    <h3>🎬 Sala de Cinema com TV Retrátil</h3>
-                    <p>Segundo projeto em desenvolvimento: ambiente automatizado com TV retrátil inclinável, luzes ajustáveis, portas e poltronas.</p>
-                </div>
-                <button class="btn" onclick="openModal('modal2')">Ver Detalhes</button>
+            <div class="card">
+                <span class="card-icon">🛋️</span>
+                <h3>Conforto</h3>
+                <p>Crie o ambiente perfeito para relaxar, trabalhar ou receber visitas com configurações automatizadas.</p>
             </div>
-
+            <div class="card">
+                <span class="card-icon">🔒</span>
+                <h3>Segurança</h3>
+                <p>Monitore o estado do seu lar em tempo real de onde estiver, com alertas e respostas imediatas.</p>
+            </div>
+            <div class="card">
+                <span class="card-icon">🌱</span>
+                <h3>Economia</h3>
+                <p>Gestão eficiente de energia desligando luzes e equipamentos ociosos automaticamente.</p>
+            </div>
         </div>
     </section>
 
-    <div id="modal1" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal('modal1')">&times;</span>
-            <h3 class="modal-title">Maquete Residencial Inteligente</h3>
-            <div class="modal-body">
-                <p>Nosso projeto piloto simula uma residência funcional completa controlada por smartphone.</p>
-                <ul>
-                    <li><strong>Estrutura:</strong> Maquete composta por 2 quartos, 1 banheiro, 1 sala, 1 cozinha e 1 depósito.</li>
-                    <li><strong>Controle:</strong> Acionamento remoto das luzes de cada cômodo individualmente pelo celular.</li>
-                </ul>
+    <!-- ⚙️ Solucoes -->
+    <section id="solucoes" class="section">
+        <h2 class="section-title">Nossas Soluções</h2>
+        <p class="section-subtitle">Tecnologia sob medida para todos os ambientes da residência</p>
+        
+        <div class="cards-grid">
+            <div class="card">
+                <span class="card-icon">💡</span>
+                <h3>Iluminação Inteligente</h3>
+                <p>Ajuste de intensidade, acendimento por presença e programação de horários.</p>
+            </div>
+            <div class="card">
+                <span class="card-icon">🪟</span>
+                <h3>Cortinas & Persianas</h3>
+                <p>Abertura e fecho automatizados para aproveitamento da luz natural.</p>
+            </div>
+            <div class="card">
+                <span class="card-icon">🌡️</span>
+                <h3>Climatização</h3>
+                <p>Controle de temperatura inteligente garantindo ambiente agradável e economia.</p>
+            </div>
+            <div class="card">
+                <span class="card-icon">🔌</span>
+                <h3>Tomadas Conectadas</h3>
+                <p>Gerenciamento remoto de eletrodomésticos e medição de consumo.</p>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div id="modal2" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal('modal2')">&times;</span>
-            <h3 class="modal-title">Sala de Cinema Inteligente</h3>
-            <div class="modal-body">
-                <p>Nosso projeto atual traz automação completa para ambientes de cinema residencial.</p>
-                <ul>
-                    <li><strong>TV Retrátil:</strong> Inclinação e ajuste automático da tela.</li>
-                    <li><strong>Iluminação:</strong> Ajuste dinâmico entre luz mais clara e luz mais escura.</li>
-                    <li><strong>Mecanismos:</strong> Abertura e fechamento de portas e movimentação automatizada das poltronas.</li>
-                </ul>
+    <!-- 📱 Protótipo Real e Evolucao Conectividade -->
+    <section id="prototipo" class="section">
+        <h2 class="section-title">Nosso Protótipo Real</h2>
+        <p class="section-subtitle">Engenharia aplicada na prática e planeamento de escalabilidade</p>
+
+        <div class="cards-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+            <div class="card">
+                <span class="card-icon">🏠</span>
+                <h3>Maquete Residencial Funcional</h3>
+                <p>Desenvolvemos uma estrutura piloto física simulando 2 quartos, 1 banheiro, 1 sala, 1 cozinha e 1 depósito. O sistema permite acionar a iluminação individual de cada um dos cômodos de forma remota via smartphone.</p>
+            </div>
+
+            <div class="card">
+                <span class="card-icon">📶</span>
+                <h3>Evolução: Bluetooth → Wi-Fi</h3>
+                <p>Nosso projeto inicial opera via comunicação Bluetooth local. O roadmap de desenvolvimento inclui a transição para protocolos Wi-Fi e Cloud, permitindo acesso global e integração com assistentes virtuais.</p>
             </div>
         </div>
-    </div>
+    </section>
 
+    <!-- 🎬 Modo Cinema (Conceito) -->
+    <section id="projetos" class="section">
+        <h2 class="section-title">Projetos em Desenvolvimento</h2>
+        <p class="section-subtitle">Inovações conceituais pensadas para o futuro do entretenimento residencial</p>
+
+        <div class="card" style="max-width: 800px; margin: 0 auto;">
+            <span class="badge-concept">Conceito / Projeto Futuro</span>
+            <span class="card-icon" style="display: block;">🎬</span>
+            <h3>Modo Cinema Imersivo</h3>
+            <p>Conceito projetado para criar uma experiência cinematográfica automática em casa: ajuste dinâmico da TV retrátil, dimerização automática das luzes, fechamento de portas e inclinação ajustável de poltronas ao iniciar a sessão.</p>
+        </div>
+    </section>
+
+    <!-- 📊 Como Funciona -->
+    <section id="funcionamento" class="section">
+        <h2 class="section-title">Como Funciona</h2>
+        <p class="section-subtitle">Arquitetura simplificada para alta eficiência e resposta rápida</p>
+
+        <div class="flow-container">
+            <div class="flow-step">
+                <span class="card-icon">📱</span>
+                <h3>1. Interface</h3>
+                <p>Comando enviado via Smartphone</p>
+            </div>
+            <span class="flow-arrow">➔</span>
+            <div class="flow-step">
+                <span class="card-icon">⚙️</span>
+                <h3>2. Processamento</h3>
+                <p>Módulo de controlo e rede</p>
+            </div>
+            <span class="flow-arrow">➔</span>
+            <div class="flow-step">
+                <span class="card-icon">💡</span>
+                <h3>3. Atuação</h3>
+                <p>Resposta imediata do dispositivo</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 🎯 Marketing & Posicionamento -->
+    <section class="section">
+        <h2 class="section-title">Mercado e Diferencial</h2>
+        <p class="section-subtitle">Atendendo a clientes que buscam modernidade, acessibilidade e eficiência</p>
+
+        <div class="cards-grid">
+            <div class="card">
+                <span class="card-icon">🎯</span>
+                <h3>Público-Alvo</h3>
+                <p>Proprietários e entusiastas de tecnologia que valorizam a modernização do lar, o conforto familiar e a segurança.</p>
+            </div>
+            <div class="card">
+                <span class="card-icon">✨</span>
+                <h3>Nosso Diferencial</h3>
+                <p>Projetos modulares, interface intuitiva e soluções escaláveis adaptadas à realidade do cliente.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 👥 Rodape e Equipe -->
     <footer>
         <p>&copy; 2026 techresidencial — Todos os direitos reservados.</p>
-        
-        <div class="team-footer">
-            <strong>Equipe de marketing:</strong>
-            <ul>
+
+        <div class="team-box">
+            <h4>Equipe de Marketing</h4>
+            <ul class="team-list">
                 <li>João Victor</li>
                 <li>Gabriel</li>
                 <li>Alam</li>
@@ -401,20 +469,5 @@
         </div>
     </footer>
 
-    <script>
-        function openModal(id) {
-            document.getElementById(id).style.display = 'flex';
-        }
-
-        function closeModal(id) {
-            document.getElementById(id).style.display = 'none';
-        }
-
-        window.onclick = function(event) {
-            if (event.target.classList.contains('modal')) {
-                event.target.style.display = 'none';
-            }
-        }
-    </script>
 </body>
 </html>
