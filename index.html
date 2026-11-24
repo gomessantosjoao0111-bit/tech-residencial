@@ -130,6 +130,19 @@
       box-shadow: var(--shadow); transition: transform .25s ease, border-color .25s ease;
     }
     .card:hover { transform: translateY(-5px); border-color: rgba(194,137,255,.75); }
+
+    .line-icon {
+      width: 31px; height: 31px; display: block; fill: none;
+      stroke: currentColor; stroke-width: 1.65; stroke-linecap: round;
+      stroke-linejoin: round; color: #d9b8ff;
+    }
+    .card-icon .line-icon { width: 32px; height: 32px; }
+    .tab-icon {
+      width: 20px; height: 20px; vertical-align: -4px; margin-right: 5px;
+      fill: none; stroke: currentColor; stroke-width: 1.7;
+      stroke-linecap: round; stroke-linejoin: round;
+    }
+
     .card-icon {
       width: 58px; height: 58px; display: grid; place-items: center; border-radius: 17px;
       background: rgba(155,77,255,.18); border: 1px solid rgba(190,130,255,.3);
@@ -292,7 +305,7 @@
       </nav>
 
       <div class="header-actions">
-        <button class="icon-btn" id="presentation-toggle" type="button" aria-pressed="false" title="Ativar letras maiores para apresentação">▶ Apresentar</button>
+        <button class="icon-btn" id="presentation-toggle" type="button" aria-pressed="false" title="Ativar letras maiores para apresentação">Apresentar</button>
         <button class="icon-btn presentation-exit" id="presentation-exit" type="button">Sair do modo</button>
         <button class="menu-toggle" id="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">☰ Menu</button>
       </div>
@@ -320,10 +333,10 @@
         <p class="section-subtitle">A automação pode tornar a rotina mais simples e ajudar a criar ambientes que acompanham as necessidades de cada pessoa.</p>
       </div>
       <div class="grid">
-        <article class="card"><div class="card-icon" aria-hidden="true">⚡</div><h3>Praticidade</h3><p>Controle dispositivos, cenários e iluminação com poucos toques no smartphone ou por comandos simples.</p></article>
-        <article class="card"><div class="card-icon" aria-hidden="true">🛋️</div><h3>Conforto</h3><p>Crie o ambiente ideal para relaxar, estudar, trabalhar ou receber visitas com configurações automatizadas.</p></article>
-        <article class="card"><div class="card-icon" aria-hidden="true">🔒</div><h3>Segurança</h3><p>Integre recursos de monitoramento e alertas para acompanhar melhor o que acontece em sua residência.</p></article>
-        <article class="card"><div class="card-icon" aria-hidden="true">🌱</div><h3>Uso consciente</h3><p>Programe luzes e equipamentos para evitar desperdícios e utilizar energia de maneira mais eficiente.</p></article>
+        <article class="card"><div class="card-icon" aria-hidden="true"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4.5 13h6l-.5 9 9-12h-6z"/></svg></div><h3>Praticidade</h3><p>Controle dispositivos, cenários e iluminação com poucos toques no smartphone ou por comandos simples.</p></article>
+        <article class="card"><div class="card-icon" aria-hidden="true"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v4"/><path d="M3 12a2 2 0 0 1 2 2v4h14v-4a2 2 0 0 1 2-2v6H3zM6 18v2m12-2v2"/></svg></div><h3>Conforto</h3><p>Crie o ambiente ideal para relaxar, estudar, trabalhar ou receber visitas com configurações automatizadas.</p></article>
+        <article class="card"><div class="card-icon" aria-hidden="true"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3m-4 4v3"/></svg></div><h3>Segurança</h3><p>Integre recursos de monitoramento e alertas para acompanhar melhor o que acontece em sua residência.</p></article>
+        <article class="card"><div class="card-icon" aria-hidden="true"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4c-8 0-13 3-13 9a5 5 0 0 0 5 5c6 0 8-6 8-14Z"/><path d="M3 21c3-6 7-9 13-12"/></svg></div><h3>Uso consciente</h3><p>Programe luzes e equipamentos para evitar desperdícios e utilizar energia de maneira mais eficiente.</p></article>
       </div>
     </section>
 
@@ -335,10 +348,10 @@
           <p class="section-subtitle">Possibilidades de automação pensadas para diferentes espaços e necessidades da residência.</p>
         </div>
         <div class="grid">
-          <article class="card"><div class="card-icon" aria-hidden="true">💡</div><h3>Iluminação inteligente</h3><p>Acionamento remoto, ajuste de intensidade, sensores de presença e programação de horários.</p></article>
-          <article class="card"><div class="card-icon" aria-hidden="true">🪟</div><h3>Cortinas e persianas</h3><p>Abertura e fechamento automatizados para aproveitar a luz natural e facilitar a rotina.</p></article>
-          <article class="card"><div class="card-icon" aria-hidden="true">🌡️</div><h3>Climatização</h3><p>Controle inteligente da temperatura para ajudar a manter os ambientes agradáveis.</p></article>
-          <article class="card"><div class="card-icon" aria-hidden="true">🔌</div><h3>Tomadas conectadas</h3><p>Gerenciamento remoto de aparelhos compatíveis e acompanhamento do consumo de energia.</p></article>
+          <article class="card"><div class="card-icon" aria-hidden="true"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6m-5 3h4m-5-6a7 7 0 1 1 6 0c-.8.5-1 1.2-1 2H10c0-.8-.2-1.5-1-2Z"/></svg></div><h3>Iluminação inteligente</h3><p>Acionamento remoto, ajuste de intensidade, sensores de presença e programação de horários.</p></article>
+          <article class="card"><div class="card-icon" aria-hidden="true"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M12 3v18M3 8h18M3 13h18"/></svg></div><h3>Cortinas e persianas</h3><p>Abertura e fechamento automatizados para aproveitar a luz natural e facilitar a rotina.</p></article>
+          <article class="card"><div class="card-icon" aria-hidden="true"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 14.8V5a3 3 0 0 0-6 0v9.8a5 5 0 1 0 6 0Z"/><path d="M11 8v9"/></svg></div><h3>Climatização</h3><p>Controle inteligente da temperatura para ajudar a manter os ambientes agradáveis.</p></article>
+          <article class="card"><div class="card-icon" aria-hidden="true"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3v6m8-6v6M6 9h12v3a6 6 0 0 1-12 0V9Zm6 9v3"/></svg></div><h3>Tomadas conectadas</h3><p>Gerenciamento remoto de aparelhos compatíveis e acompanhamento do consumo de energia.</p></article>
         </div>
       </section>
     </div>
@@ -351,9 +364,9 @@
       </div>
       <div class="identity-panel">
         <div class="identity-tabs" role="tablist" aria-label="Missão, visão e valores">
-          <button class="identity-tab" id="tab-missao" type="button" role="tab" aria-selected="true" aria-controls="painel-identidade" data-tab="missao">🎯 Missão</button>
-          <button class="identity-tab" id="tab-visao" type="button" role="tab" aria-selected="false" aria-controls="painel-identidade" data-tab="visao">🚀 Visão</button>
-          <button class="identity-tab" id="tab-valores" type="button" role="tab" aria-selected="false" aria-controls="painel-identidade" data-tab="valores">💜 Valores</button>
+          <button class="identity-tab" id="tab-missao" type="button" role="tab" aria-selected="true" aria-controls="painel-identidade" data-tab="missao"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg> Missão</button>
+          <button class="identity-tab" id="tab-visao" type="button" role="tab" aria-selected="false" aria-controls="painel-identidade" data-tab="visao"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4c2-2 5-2 6-2 0 1 0 4-2 6l-7 7-4-4z"/><path d="m7 11-3 1-2 4 5-1m6 2-1 4 4-2 1-3M8 16l-3 3m8-11h.01"/></svg> Visão</button>
+          <button class="identity-tab" id="tab-valores" type="button" role="tab" aria-selected="false" aria-controls="painel-identidade" data-tab="valores"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 8.8c0 5-8.8 11-8.8 11s-8.8-6-8.8-11A4.8 4.8 0 0 1 12 6a4.8 4.8 0 0 1 8.8 2.8Z"/></svg> Valores</button>
         </div>
         <div class="identity-content" id="painel-identidade" role="tabpanel" aria-labelledby="tab-missao" tabindex="0" aria-live="polite">
           <h3 id="identity-title">Nossa missão</h3>
@@ -372,12 +385,12 @@
         </div>
         <div class="prototype-highlight">
           <article class="card">
-            <div class="card-icon" aria-hidden="true">🏠</div>
+            <div class="card-icon" aria-hidden="true"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7h-6v7H4a1 1 0 0 1-1-1z"/></svg></div>
             <h3>Protótipo residencial funcional</h3>
             <p>Desenvolvemos uma estrutura física que simula uma residência com dois quartos, banheiro, sala, cozinha e depósito. O protótipo permite acionar individualmente a iluminação dos cômodos por meio de um smartphone.</p>
           </article>
           <article class="card">
-            <div class="card-icon" aria-hidden="true">📶</div>
+            <div class="card-icon" aria-hidden="true"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9a14 14 0 0 1 18 0M6 12a9 9 0 0 1 12 0m-9 3a4 4 0 0 1 6 0m-3 4h.01"/></svg></div>
             <h3>Evolução da conectividade</h3>
             <p>O projeto inicial utiliza comunicação Bluetooth local. Como possibilidade de evolução, planejamos estudar a transição para Wi-Fi e serviços em nuvem, ampliando as possibilidades de acesso e integração.</p>
           </article>
@@ -394,7 +407,7 @@
       </div>
       <article class="card" style="max-width:900px;margin:auto">
         <span class="concept-label">Conceito / projeto futuro</span>
-        <div class="card-icon" aria-hidden="true">🎬</div>
+        <div class="card-icon" aria-hidden="true"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="m10 9 5 3-5 3zM3 8h18M7 4l2 4m5-4 2 4"/></svg></div>
         <h3>Modo cinema imersivo</h3>
         <p>Uma experiência planejada para transformar a sala em um ambiente de cinema: iluminação reduzida automaticamente, fechamento de cortinas e integração com equipamentos compatíveis. O conceito também prevê soluções de conforto, como móveis ajustáveis.</p>
       </article>
@@ -408,11 +421,11 @@
           <p class="section-subtitle">O caminho de um comando até a ação realizada pelo dispositivo.</p>
         </div>
         <div class="flow">
-          <article class="flow-step"><div class="card-icon" aria-hidden="true">📱</div><h3>1. Comando</h3><p>O usuário envia uma instrução pelo smartphone.</p></article>
+          <article class="flow-step"><div class="card-icon" aria-hidden="true"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="2"/><path d="M10 5h4m-2 13h.01"/></svg></div><h3>1. Comando</h3><p>O usuário envia uma instrução pelo smartphone.</p></article>
           <div class="flow-arrow" aria-hidden="true">➜</div>
-          <article class="flow-step"><div class="card-icon" aria-hidden="true">⚙️</div><h3>2. Processamento</h3><p>O módulo de controle recebe e interpreta o comando.</p></article>
+          <article class="flow-step"><div class="card-icon" aria-hidden="true"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="m19.4 15 .1.1 1.4 1.1-1.4 2.4-1.7-.7a8 8 0 0 1-1.7 1l-.3 1.8h-2.8l-.3-1.8a8 8 0 0 1-1.7-1l-1.7.7-1.4-2.4 1.4-1.1a7 7 0 0 1 0-2l-1.4-1.1 1.4-2.4 1.7.7a8 8 0 0 1 1.7-1l.3-1.8h2.8l.3 1.8a8 8 0 0 1 1.7 1l1.7-.7 1.4 2.4-1.4 1.1a7 7 0 0 1 0 2Z"/></svg></div><h3>2. Processamento</h3><p>O módulo de controle recebe e interpreta o comando.</p></article>
           <div class="flow-arrow" aria-hidden="true">➜</div>
-          <article class="flow-step"><div class="card-icon" aria-hidden="true">💡</div><h3>3. Ação</h3><p>O dispositivo executa a função solicitada.</p></article>
+          <article class="flow-step"><div class="card-icon" aria-hidden="true"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18h6m-5 3h4m-5-6a7 7 0 1 1 6 0c-.8.5-1 1.2-1 2H10c0-.8-.2-1.5-1-2Z"/></svg></div><h3>3. Ação</h3><p>O dispositivo executa a função solicitada.</p></article>
         </div>
       </section>
     </div>
@@ -424,8 +437,8 @@
         <p class="section-subtitle">Soluções pensadas para pessoas que desejam unir tecnologia, praticidade e eficiência em casa.</p>
       </div>
       <div class="grid two">
-        <article class="card"><div class="card-icon" aria-hidden="true">🎯</div><h3>Público-alvo</h3><p>Pessoas interessadas em tecnologia e em modernizar suas residências, valorizando conforto, praticidade e recursos que facilitem a rotina familiar.</p></article>
-        <article class="card"><div class="card-icon" aria-hidden="true">✨</div><h3>Nosso diferencial</h3><p>Projetos modulares, interface intuitiva e soluções que podem ser planejadas de acordo com as necessidades e possibilidades de cada cliente.</p></article>
+        <article class="card"><div class="card-icon" aria-hidden="true"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></div><h3>Público-alvo</h3><p>Pessoas interessadas em tecnologia e em modernizar suas residências, valorizando conforto, praticidade e recursos que facilitem a rotina familiar.</p></article>
+        <article class="card"><div class="card-icon" aria-hidden="true"><svg class="line-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8zM19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/></svg></div><h3>Nosso diferencial</h3><p>Projetos modulares, interface intuitiva e soluções que podem ser planejadas de acordo com as necessidades e possibilidades de cada cliente.</p></article>
       </div>
     </section>
 
@@ -539,7 +552,7 @@
     function setPresentation(enabled) {
       document.body.classList.toggle("presentation-mode", enabled);
       presentationButton.setAttribute("aria-pressed", String(enabled));
-      presentationButton.textContent = enabled ? "✓ Apresentação ativa" : "▶ Apresentar";
+      presentationButton.textContent = enabled ? "✓ Apresentação ativa" : "Apresentar";
     }
     presentationButton.addEventListener("click", () => setPresentation(!document.body.classList.contains("presentation-mode")));
     exitButton.addEventListener("click", () => setPresentation(false));
